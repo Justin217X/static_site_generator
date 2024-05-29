@@ -22,80 +22,122 @@ Our static site generator will take a directory of Markdown files (one for each 
 
 Seeing as the primary objective of a static site generator is to convert Markdown into HTML, it's important to understand the basics of each. We're not going to cover every aspect of Markdown or HTML, but we will cover the basics.
 
-HEADINGS
+### HEADINGS
+
 Typically there are 6 possible levels of headings in HTML. "Heading 1" is the heading for an entire document, then you can nest multiple "Heading 2"'s in the document, multiple "Heading 3"'s in each "Heading 2", and so on.
 
+<!--
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>
 <h3>Heading 3</h3>
+-->
 
+<!--
 # Heading 1
-
 ## Heading 2
-
 ### Heading 3
+-->
 
-PARAGRAPHS
+# Example Heading 1
 
-<p>This is a paragraph of text.</p>
+## Example Heading 2
+
+### Example Heading 3
+
+### PARAGRAPHS
+
+<!-- <p>This is a paragraph of text.</p> -->
+<!-- This is a paragraph of text. -->
 
 This is a paragraph of text.
 
-BOLD
+### BOLD
 
-<p>This is a <b>bold</b> word.</p>
+<!-- <p>This is a <b>bold</b> word.</p> -->
+<!-- This is a **bold** word. -->
 
 This is a **bold** word.
 
-ITALICS
+### ITALICS
 
-<p>This is an <i>italic</i> word.</p>
+<!-- <p>This is an <i>italic</i> word.</p> -->
+<!-- This is an _italic_ word. -->
 
 This is an _italic_ word.
 
-LINKS
-This is a paragraph with a <a href="https://www.google.com">link</a>.
+### LINKS
+
+<!-- This is a paragraph with a <a href="https://www.google.com">link</a>. -->
+<!-- This is a paragraph with a [link](https://www.google.com). -->
 
 This is a paragraph with a [link](https://www.google.com).
 
-RENDERING IMAGES
-<img src="url/of/image.jpg" alt="Description of image">
+### RENDERING IMAGES
+
+<!-- <img src="url/of/image.jpg" alt="Description of image"> -->
+<!-- ![alt text for image](url/of/image.jpg) -->
 
 ![alt text for image](url/of/image.jpg)
 
-UNORDERED LISTS
+### UNORDERED LISTS
 
+<!--
 <ul>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
 </ul>
+-->
+<!--
+- Item 1
+- Item 2
+- Item 3
+-->
 
 - Item 1
 - Item 2
 - Item 3
 
-ORDERED LISTS
+<!--
+- Item 1
+- Item 2
+- Item 3
+-->
 
+### ORDERED LISTS
+
+<!--
 <ol>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
 </ol>
+-->
+
+<!--
+1. Item 1
+2. Item 2
+3. Item 3
+   -->
 
 1. Item 1
 2. Item 2
 3. Item 3
 
-QUOTES
+### QUOTES
 
+<!--
 <blockquote>
     This is a quote.
 </blockquote>
+-->
+<!-- > This is a quote. -->
 
 > This is a quote.
 
-CODE
-<code>This is code</code>
+### CODE
+
+<!-- <code>This is code</code> -->
+<!-- `This is code` -->
 
 `This is code`
