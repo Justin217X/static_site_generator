@@ -1,6 +1,8 @@
 import unittest
 from inline_markdown import (
     split_nodes_delimiter,
+    extract_markdown_images,
+    extract_markdown_links,
 )
 
 from textnode import (
@@ -79,6 +81,34 @@ class TestInlineMarkdown(unittest.TestCase):
             ],
             new_nodes,
         )
+
+    def test_extract_markdown_images(self):
+        text = "This is text with an ![image](https://example.com/image1.png) and ![another](https://example.com/image2.png)"
+        expected_output = [("image", "https://example.com/image1.png"),
+                           ("another", "https://example.com/image2.png")]
+        assert extract_markdown_images(text) == expected_output
+
+        text = "No images here!"
+        expected_output = []
+        assert extract_markdown_images(text) == expected_output
+
+        text = "Single image ![single](https://example.com/single.png)"
+        expected_output = [("single", "https://example.com/single.png")]
+        assert extract_markdown_images(text) == expected_output
+
+    def test_extract_markdown_links(self):
+        text = "This is text with a [link](https://example.com/page) and [another](https://example.com/another)"
+        expected_output = [("link", "https://example.com/page"),
+                           ("another", "https://example.com/another")]
+        assert extract_markdown_links(text) == expected_output
+
+        text = "No links here!"
+        expected_output = []
+        assert extract_markdown_links(text) == expected_output
+
+        text = "Single link [single](https://example.com/single)"
+        expected_output = [("single", "https://example.com/single")]
+        assert extract_markdown_links(text) == expected_output
 
 
 if __name__ == "__main__":
